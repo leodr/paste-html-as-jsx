@@ -7,6 +7,10 @@
     "engines": {
         "vscode": "^1.51.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/leodr/html-to-jsx.git"
+    },
     "categories": [
         "Other"
     ],
