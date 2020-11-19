@@ -1,51 +1,54 @@
 {
-    "name": "html-to-jsx",
-    "displayName": "HTML to JSX",
-    "description": "Converts copied HTML to JSX when VSCode receives focus.",
-    "version": "0.0.1",
-    "publisher": "leodriesch",
-    "engines": {
-        "vscode": "^1.51.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/leodr/html-to-jsx.git"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onStartupFinished"
-    ],
-    "main": "./dist/extension.js",
-    "scripts": {
-        "vscode:prepublish": "yarn run package",
-        "compile": "webpack --devtool nosources-source-map --config ./build/node-extension.webpack.config.js",
-        "watch": "webpack --watch --devtool nosources-source-map --info-verbosity verbose --config ./build/node-extension.webpack.config.js",
-        "package": "webpack --mode production --config ./build/node-extension.webpack.config.js",
-        "test-compile": "tsc -p ./",
-        "test-watch": "tsc -watch -p ./",
-        "pretest": "yarn run test-compile && yarn run lint",
-        "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.1.3",
-        "@types/mocha": "^8.0.0",
-        "@types/node": "^12.11.7",
-        "@types/vscode": "^1.51.0",
-        "@typescript-eslint/eslint-plugin": "^4.1.1",
-        "@typescript-eslint/parser": "^4.1.1",
-        "eslint": "^7.9.0",
-        "glob": "^7.1.6",
-        "mocha": "^8.1.3",
-        "ts-loader": "^8.0.3",
-        "typescript": "^4.0.2",
-        "vscode-test": "^1.4.0",
-        "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12"
-    },
-    "dependencies": {
-        "htmltojsx": "^0.3.0"
-    }
+  "name": "html-to-jsx",
+  "displayName": "HTML to JSX",
+  "version": "0.0.1",
+  "description": "Converts copied HTML to JSX when VSCode receives focus.",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leodr/html-to-jsx.git"
+  },
+  "publisher": "leodriesch",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "compile": "webpack --devtool nosources-source-map --config ./build/node-extension.webpack.config.js",
+    "format": "prettier . --write --ignore-path .gitignore",
+    "lint": "eslint src --ext ts",
+    "package": "webpack --mode production --config ./build/node-extension.webpack.config.js",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "test": "node ./out/test/runTest.js",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "vscode:prepublish": "yarn run package",
+    "watch": "webpack --watch --devtool nosources-source-map --info-verbosity verbose --config ./build/node-extension.webpack.config.js"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "dependencies": {
+    "htmltojsx": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.51.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "prettier": "^2.1.2",
+    "prettier-plugin-packagejson": "^2.2.7",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "vscode-test": "^1.4.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "vscode": "^1.51.0"
+  }
 }
