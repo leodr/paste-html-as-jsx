@@ -21,7 +21,9 @@
         "watch": "webpack --watch --devtool nosources-source-map --info-verbosity verbose"
     },
     "activationEvents": [
-        "onStartupFinished"
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescriptreact"
     ],
     "dependencies": {
         "htmltojsx": "^0.3.0"

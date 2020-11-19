@@ -1,9 +1,16 @@
 # Change Log
 
-All notable changes to the "html-to-jsx" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+All notable changes to the "html-to-jsx" extension will be documented in this
+file.
 
 ## [Unreleased]
 
-- Initial release
+-   Change activation to `onLanguage`-event for `javascript`, `javascriptreact`
+    and `typescriptreact`
+
+## [0.0.1] - 2020-11-20
+
+### Added
+
+-   Convert HTML from clipboard to JSX when the VSCode window has a focus
+    change.
