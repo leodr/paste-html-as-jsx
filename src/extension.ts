@@ -1,28 +1,54 @@
-// @ts-expect-error
-import * as HtmlToJsx from "htmltojsx";
 import * as vscode from "vscode";
+import { convertHtmlToJsx } from "./convertHtmlToJsx";
+
+const RELEVANT_LANGUAGE_IDS = [
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+];
 
 export function activate() {
-  const { clipboard } = vscode.env;
+    vscode.window.onDidChangeActiveTextEditor(async (editor) => {
+        if (editor) {
+            const { languageId } = editor.document;
 
-  vscode.window.onDidChangeWindowState(async (state) => {
-    if (state.focused) {
-      const clipboardText = await clipboard.readText();
+            if (RELEVANT_LANGUAGE_IDS.includes(languageId)) {
+                swapClipboard();
+            }
+        }
+    });
 
-      const trimmedClipboardText = clipboardText.trim();
+    vscode.window.onDidChangeWindowState(async (state) => {
+        if (state.focused) {
+            const { activeTextEditor } = vscode.window;
 
-      const clipboardIsHtml =
+            if (activeTextEditor) {
+                const { languageId } = activeTextEditor.document;
+
+                if (RELEVANT_LANGUAGE_IDS.includes(languageId)) {
+                    swapClipboard();
+                }
+            }
+        }
+    });
+}
+
+async function swapClipboard() {
+    const { clipboard } = vscode.env;
+
+    const clipboardText = await clipboard.readText();
+
+    const trimmedClipboardText = clipboardText.trim();
+
+    const clipboardIsHtml =
         trimmedClipboardText.startsWith("<") &&
         trimmedClipboardText.endsWith(">");
 
-      if (clipboardIsHtml) {
-        const converter = new HtmlToJsx({
-          createClass: false,
-        });
-        let result = converter.convert(trimmedClipboardText);
+    if (clipboardIsHtml) {
+        const result = convertHtmlToJsx(trimmedClipboardText);
 
-        await clipboard.writeText(result);
-      }
+        if (result) {
+            await clipboard.writeText(result);
+        }
     }
-  });
 }
