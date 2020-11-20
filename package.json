@@ -1,7 +1,7 @@
 {
     "name": "html-to-jsx",
     "displayName": "HTML to JSX",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Converts copied HTML to JSX when VSCode receives focus.",
     "categories": [
         "Other"
