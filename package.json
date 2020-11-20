@@ -12,6 +12,7 @@
     },
     "publisher": "leodriesch",
     "main": "./dist/extension.js",
+    "license": "MIT",
     "scripts": {
         "compile": "webpack --devtool nosources-source-map",
         "format": "prettier . --write --ignore-path .gitignore",
