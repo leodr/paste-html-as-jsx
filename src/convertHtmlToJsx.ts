@@ -6,7 +6,19 @@ export function convertHtmlToJsx(html: string): string | null {
         const converter = new HtmlToJsx({
             createClass: false,
         });
-        return converter.convert(html);
+
+        let jsxString: string = converter.convert(html);
+
+        /**
+         * Somehow `htmltojsx` converts empty alt tags on images to boolean
+         * attributes, so we just find thoss mistakes by searching for alt tags
+         * that are not followed by a `=` and convert them to `alt=""`
+         *
+         * https://github.com/leodr/paste-html-as-jsx/issues/1
+         */
+        jsxString = jsxString.replace(/alt(?!=)/g, 'alt=""');
+
+        return jsxString;
     } catch {
         return null;
     }
