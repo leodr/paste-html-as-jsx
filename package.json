@@ -1,7 +1,7 @@
 {
     "name": "paste-html-as-jsx",
     "displayName": "Paste HTML as JSX",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Converts copied HTML to JSX before pasting into JavaScript/TypeScript code.",
     "categories": [
         "Formatters",
