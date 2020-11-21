@@ -1,11 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to the "html-to-jsx" extension will be documented in this
 file.
 
-## [Unreleased]
+## [0.2.0] - 2020-11-21
 
--
+### Added
+
+-   Add an MIT license
+
+### Changed
+
+-   Add a proper README
+-   Optimize metadataa for VSCode marketplace
 
 ## [0.1.0] - 2020-11-20
 
