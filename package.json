@@ -30,7 +30,7 @@
         "lint": "eslint src --ext ts",
         "package": "webpack --mode production",
         "vscode:prepublish": "yarn run package",
-        "watch": "webpack --watch --devtool nosources-source-map --info-verbosity verbose"
+        "watch": "webpack --watch --devtool nosources-source-map"
     },
     "activationEvents": [
         "onLanguage:javascript",
