@@ -6,8 +6,8 @@
 **/*.map
 **/*.ts
 **/tsconfig.json
-build/
 node_modules/
 out/**
 src/**
 yarn.lock
+webpack.config.js

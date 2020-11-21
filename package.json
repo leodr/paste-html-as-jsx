@@ -1,18 +1,29 @@
 {
-    "name": "html-to-jsx",
-    "displayName": "HTML to JSX",
+    "name": "paste-html-as-jsx",
+    "displayName": "Paste HTML as JSX",
     "version": "0.1.0",
-    "description": "Converts copied HTML to JSX when VSCode receives focus.",
+    "description": "Converts copied HTML to JSX before pasting into JavaScript/TypeScript code.",
     "categories": [
+        "Formatters",
         "Other"
     ],
+    "homepage": "https://github.com/leodr/paste-html-as-jsx",
+    "bugs": {
+        "url": "https://github.com/leodr/paste-html-as-jsx/issues",
+        "email": "dev@leodriesch.com"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/leodr/html-to-jsx.git"
+        "url": "https://github.com/leodr/paste-html-as-jsx.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Leo Driesch",
+        "email": "dev@leodriesch.com",
+        "url": "https://twitter.com/leodriesch"
     },
     "publisher": "leodriesch",
     "main": "./dist/extension.js",
-    "license": "MIT",
     "scripts": {
         "compile": "webpack --devtool nosources-source-map",
         "format": "prettier . --write --ignore-path .gitignore",
@@ -44,5 +55,6 @@
     },
     "engines": {
         "vscode": "^1.51.0"
-    }
+    },
+    "icon": "assets/logo.png"
 }
