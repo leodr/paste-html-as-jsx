@@ -3,6 +3,17 @@
 All notable changes to the "paste-html-as-jsx" extension will be documented in
 this file.
 
+## [0.2.1] - 2020-11-21
+
+### Changed
+
+-   Decrease minimum VSCode version to 1.45 since it was unnecessarily high.
+
+### Fixed
+
+-   Fix bug where empty alt tags on images where converted to boolean attributes
+    ([1](https://github.com/leodr/paste-html-as-jsx/issues/1))
+
 ## [0.2.0] - 2020-11-21
 
 ### Added
