@@ -54,7 +54,7 @@
         "webpack-cli": "^4.2.0"
     },
     "engines": {
-        "vscode": "^1.51.0"
+        "vscode": "^1.45.0"
     },
     "icon": "assets/logo.png"
 }
