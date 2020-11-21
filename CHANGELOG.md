@@ -1,7 +1,7 @@
 # Changelog
 
-All notable changes to the "html-to-jsx" extension will be documented in this
-file.
+All notable changes to the "paste-html-as-jsx" extension will be documented in
+this file.
 
 ## [0.2.0] - 2020-11-21
 

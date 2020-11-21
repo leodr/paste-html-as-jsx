@@ -46,7 +46,7 @@ writes it back.
 ## Problems or Suggestions
 
 If you experience any issues or have ideas on how to improve the extension, feel
-free to [open an issue](https://github.com/leodr/html-to-jsx/issues/new).
+free to [open an issue](https://github.com/leodr/paste-html-as-jsx/issues/new).
 
 ---
 
