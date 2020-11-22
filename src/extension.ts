@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { convertHtmlToJsx } from "./convertHtmlToJsx";
+import { isHTML } from "./isHTML";
 
 const RELEVANT_LANGUAGE_IDS = [
     "javascript",
@@ -38,14 +39,8 @@ async function swapClipboard() {
 
     const clipboardText = await clipboard.readText();
 
-    const trimmedClipboardText = clipboardText.trim();
-
-    const clipboardIsHtml =
-        trimmedClipboardText.startsWith("<") &&
-        trimmedClipboardText.endsWith(">");
-
-    if (clipboardIsHtml) {
-        const result = convertHtmlToJsx(trimmedClipboardText);
+    if (isHTML(clipboardText)) {
+        const result = convertHtmlToJsx(clipboardText);
 
         if (result) {
             await clipboard.writeText(result);
