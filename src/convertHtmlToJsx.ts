@@ -1,13 +1,15 @@
-// @ts-expect-error
-import * as HtmlToJsx from "htmltojsx";
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const HtmlToJsx = require("htmltojsx");
 
 export function convertHtmlToJsx(html: string): string | null {
+    const trimmedHTML = html.trim();
+
     try {
         const converter = new HtmlToJsx({
             createClass: false,
         });
 
-        let jsxString: string = converter.convert(html);
+        let jsxString: string = converter.convert(trimmedHTML);
 
         /**
          * Somehow `htmltojsx` converts empty alt tags on images to boolean
