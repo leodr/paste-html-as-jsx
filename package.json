@@ -25,10 +25,14 @@
     "publisher": "leodriesch",
     "main": "./dist/extension.js",
     "scripts": {
+        "check-types": "tsc --noEmit",
         "compile": "webpack --devtool nosources-source-map",
         "format": "prettier . --write --ignore-path .gitignore",
         "lint": "eslint src --ext ts",
         "package": "webpack --mode production",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "validate": "run-p check-types lint test",
         "vscode:prepublish": "yarn run package",
         "watch": "webpack --watch --devtool nosources-source-map"
     },
@@ -41,11 +45,18 @@
         "htmltojsx": "^0.3.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.7",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-typescript": "^7.12.7",
+        "@types/jest": "^26.0.15",
         "@types/node": "^14.14.9",
         "@types/vscode": "^1.45.0",
         "@typescript-eslint/eslint-plugin": "^4.8.1",
         "@typescript-eslint/parser": "^4.8.1",
+        "babel-jest": "^26.6.3",
         "eslint": "^7.13.0",
+        "jest": "^26.6.3",
+        "npm-run-all": "^4.1.5",
         "prettier": "^2.1.2",
         "prettier-plugin-packagejson": "^2.2.7",
         "ts-loader": "^8.0.11",
