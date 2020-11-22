@@ -3,6 +3,12 @@
 All notable changes to the "paste-html-as-jsx" extension will be documented in
 this file.
 
+## [0.2.2] - 2020-11-22
+
+### Fixed
+
+-   Detect if JSX is copied and stop trying to convert it
+
 ## [0.2.1] - 2020-11-21
 
 ### Changed
