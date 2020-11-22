@@ -1,0 +1,21 @@
+name: Publish to VSCode Marketplace
+
+on:
+    workflow_dispatch:
+    push:
+        tags:
+            - "v*"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: "12.19.0"
+            - run: yarn install --immutable
+            - run: yarn validate
+            - run: yarn deploy
+              env:
+                  VSCE_PAT: ${{ secrets.VSCE_PAT }}
