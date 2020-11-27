@@ -1,4 +1,4 @@
-const NO_UPPERCASE_TAGS = /<\s*[A-Z]/;
+const UPPERCASE_TAGS = /<\s*[A-Z]/;
 
 /**
  * Checks if a given input string is HTML code.
@@ -11,7 +11,7 @@ export function isHTML(text: string): boolean {
         return false;
     }
 
-    if (NO_UPPERCASE_TAGS.test(trimmedText)) {
+    if (UPPERCASE_TAGS.test(trimmedText)) {
         return false;
     }
 
