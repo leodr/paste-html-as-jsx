@@ -3,6 +3,12 @@
 All notable changes to the "paste-html-as-jsx" extension will be documented in
 this file.
 
+## [0.2.3] - 2020-11-27
+
+### Fixed
+
+-   Detect that string is JSX if it contains a `className`-attribute
+
 ## [0.2.2] - 2020-11-22
 
 ### Fixed
