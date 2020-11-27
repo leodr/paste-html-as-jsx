@@ -1,4 +1,5 @@
 const UPPERCASE_TAGS = /<\s*[A-Z]/;
+const CLASSNAME_ATTRIBUTE = /<.*className.*>/;
 
 /**
  * Checks if a given input string is HTML code.
@@ -12,6 +13,10 @@ export function isHTML(text: string): boolean {
     }
 
     if (UPPERCASE_TAGS.test(trimmedText)) {
+        return false;
+    }
+
+    if (CLASSNAME_ATTRIBUTE.test(trimmedText)) {
         return false;
     }
 
