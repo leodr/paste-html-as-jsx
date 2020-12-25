@@ -3,6 +3,17 @@
 All notable changes to the "paste-html-as-jsx" extension will be documented in
 this file.
 
+## [0.3.0] - 2020-12-25
+
+### Added
+
+-   Add a `mode` setting that allows to disable the automatic conversion in
+    favor of an on-demand conversion via command.
+
+### Fixed
+
+-   Properly dispose listeners
+
 ## [0.2.3] - 2020-11-27
 
 ### Fixed
