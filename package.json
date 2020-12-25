@@ -37,13 +37,47 @@
         "vscode:prepublish": "yarn run package",
         "watch": "webpack --watch --devtool nosources-source-map"
     },
+    "contributes": {
+        "commands": [
+            {
+                "command": "paste-html-as-jsx.swapClipboard",
+                "title": "Convert HTML in Clipboard to JSX"
+            }
+        ],
+        "configuration": {
+            "properties": {
+                "paste-html-as-jsx.mode": {
+                    "default": "automatic",
+                    "description": "Controls wether the extension automatically converts the clipboard from HTML to JSX at relevant points in time or waits for the user to execute an action.",
+                    "enum": [
+                        "automatic",
+                        "on-demand"
+                    ],
+                    "enumDescriptions": [
+                        "Automatically detect copied HTML and turn it into JSX.",
+                        "Only convert clipboard when the \"Convert HTML in Clipboard to JSX\"-action is executed."
+                    ]
+                }
+            },
+            "title": "Paste HTML as JSX"
+        },
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "paste-html-as-jsx.swapClipboard",
+                    "when": "paste-html-as-jsx:showSwapClipboardAction == true"
+                }
+            ]
+        }
+    },
     "activationEvents": [
         "onLanguage:javascript",
         "onLanguage:javascriptreact",
         "onLanguage:typescriptreact"
     ],
     "dependencies": {
-        "htmltojsx": "^0.3.0"
+        "htmltojsx": "^0.3.0",
+        "vue": "^3.0.4"
     },
     "devDependencies": {
         "@babel/core": "^7.12.7",
