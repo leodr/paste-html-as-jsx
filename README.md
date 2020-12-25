@@ -8,9 +8,9 @@
 
 ## Overview
 
--   [Overview](#overview)
 -   [Get Started](#get-started)
--   [How it works](#how-it-works)
+-   [`on-demand` Mode](#on-demand-mode)
+-   [How It Works](#how-it-works)
 -   [Problems or Suggestions](#problems-or-suggestions)
 
 ## Get Started
@@ -19,6 +19,19 @@ Just copy HTML from anywhere and paste it into any JavaScript or TypeScript
 file. It has automagically been converted to JSX!
 
 ![Demo of Paste HTML as JSX](https://raw.githubusercontent.com/leodr/paste-html-as-jsx/master/assets/demo.png)
+
+## `on-demand` Mode
+
+Sometimes the automatic JSX-conversion can be annoying, for example when working
+on hybrid projects that use both JSX and HTML.
+
+If you want to control the conversion by yourself, there is an `on-demand` mode,
+which can be activated by setting the `paste-html-as-jsx.mode` setting to
+`on-demand`.
+
+When the `on-demand` mode is active, copied HTML will NOT be automatically
+converted. A command is added to the palette that can convert your clipboard
+contents from HTML to JSX at any point.
 
 ## How It Works
 
