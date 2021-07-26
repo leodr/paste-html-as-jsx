@@ -3,6 +3,14 @@
 <p align="center">
     Converts copied HTML to JSX before pasting into JavaScript/TypeScript code.
 </p>
+<p align="center">
+    <a href="https://marketplace.visualstudio.com/items?itemName=leodriesch.paste-html-as-jsx" target="_blank">
+        <img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/leodriesch.paste-html-as-jsx?color=%236366F1&labelColor=%2327272A&style=for-the-badge">
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=leodriesch.paste-html-as-jsx" target="_blank">
+        <img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/leodriesch.paste-html-as-jsx?color=%2310B981&labelColor=%2327272A&style=for-the-badge">
+    </a>
+</p>
 
 ---
 
