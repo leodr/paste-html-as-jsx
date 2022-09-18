@@ -3,6 +3,18 @@
 All notable changes to the "paste-html-as-jsx" extension will be documented in
 this file.
 
+## [1.0.0] - 2022-09-18
+
+### Added
+
+- Web extension compatibility, this extension now works on vscode.dev and other
+  instances of VSCode running in a browser context
+
+### Changed
+
+- Use a [new AST-based library](https://github.com/leodr/html-to-jsx-transform)
+  for converting HTML to JSX which results in fewer bugs and weird behavior
+
 ## [0.3.0] - 2020-12-25
 
 ### Added
