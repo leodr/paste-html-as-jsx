@@ -1,17 +1,17 @@
 {
-    "compilerOptions": {
-        "lib": ["es6"],
-        "module": "commonjs",
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitReturns": true,
-        "noUncheckedIndexedAccess": true,
-        "noUnusedParameters": true,
-        "outDir": "out",
-        "rootDir": "src",
-        "sourceMap": true,
-        "strict": true,
-        "target": "es6",
-        "skipLibCheck": true
-    },
-    "exclude": ["node_modules", ".vscode-test"]
+  "compilerOptions": {
+    "lib": ["es6"],
+    "module": "commonjs",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "outDir": "out",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", ".vscode-test"]
 }

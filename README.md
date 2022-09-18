@@ -16,10 +16,10 @@
 
 ## Overview
 
--   [Get Started](#get-started)
--   [`on-demand` Mode](#on-demand-mode)
--   [How It Works](#how-it-works)
--   [Problems or Suggestions](#problems-or-suggestions)
+- [Get Started](#get-started)
+- [`on-demand` Mode](#on-demand-mode)
+- [How It Works](#how-it-works)
+- [Problems or Suggestions](#problems-or-suggestions)
 
 ## Get Started
 
@@ -49,15 +49,14 @@ text at potentially relevant times.
 
 The extension kicks in when one of the following events happen:
 
--   You focus the VSCode window and the current editor has a relevant language
-    id
--   You focus a different editor that has a relevant language id
+- You focus the VSCode window and the current editor has a relevant language id
+- You focus a different editor that has a relevant language id
 
 The relevant language ids are:
 
--   `javascript`
--   `javascriptreact`
--   `typescriptreact`
+- `javascript`
+- `javascriptreact`
+- `typescriptreact`
 
 The extension then checks if the clipboard is HTML by checking if the first
 non-whitespace character is `<` and the last is `>` (I know, it is not very
