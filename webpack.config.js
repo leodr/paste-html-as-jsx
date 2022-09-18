@@ -1,26 +1,57 @@
-const path = require("path");
+//@ts-check
+"use strict";
 
-/** @type {import('webpack').Configuration} */
-const config = {
-  target: "node",
-  entry: "./src/extension.ts",
-  output: {
-    filename: "extension.js",
-    libraryTarget: "commonjs2",
-    devtoolModuleFilenameTemplate: "./[resource-path]",
+//@ts-check
+/** @typedef {import('webpack').Configuration} WebpackConfig **/
+
+const webpack = require("webpack");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+
+/** @type WebpackConfig */
+const webExtensionConfig = {
+  mode: "none", // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
+  target: "webworker", // extensions run in a webworker context
+  entry: {
+    extension: "./src/extension.ts",
   },
-  devtool: "source-map",
-  externals: { vscode: "commonjs vscode" },
-  resolve: { extensions: [".ts", ".js"] },
+  output: {
+    filename: "[name].js",
+    libraryTarget: "commonjs",
+    devtoolModuleFilenameTemplate: "../../[resource-path]",
+  },
+  resolve: {
+    mainFields: ["browser", "module", "main"], // look for `browser` entry point in imported node modules
+    extensions: [".ts", ".js"], // support ts-files and js-files
+  },
   module: {
     rules: [
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: "ts-loader",
+        use: [
+          {
+            loader: "ts-loader",
+          },
+        ],
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1, // disable chunks by default since web extensions must be a single bundle
+    }),
+    new NodePolyfillPlugin(),
+  ],
+  externals: {
+    vscode: "commonjs vscode", // ignored because it doesn't exist
+  },
+  performance: {
+    hints: false,
+  },
+  devtool: "nosources-source-map", // create a source map that points to the original source file
+  infrastructureLogging: {
+    level: "log", // enables logging required for problem matchers
+  },
 };
 
-module.exports = config;
+module.exports = [webExtensionConfig];
