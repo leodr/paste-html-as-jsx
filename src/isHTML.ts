@@ -6,17 +6,17 @@ const CLASSNAME_ATTRIBUTE = /<.*className.*>/;
  * @param text The input that should be checked
  */
 export function isHTML(text: string): boolean {
-  const trimmedText = text.trim();
+  text = text.trim();
 
-  if (!trimmedText.startsWith("<") || !trimmedText.endsWith(">")) {
+  if (!text.startsWith("<") || !text.endsWith(">")) {
     return false;
   }
 
-  if (UPPERCASE_TAGS.test(trimmedText)) {
+  if (UPPERCASE_TAGS.test(text)) {
     return false;
   }
 
-  if (CLASSNAME_ATTRIBUTE.test(trimmedText)) {
+  if (CLASSNAME_ATTRIBUTE.test(text)) {
     return false;
   }
 
