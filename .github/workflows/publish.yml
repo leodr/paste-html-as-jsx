@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.19.0"
-      - run: yarn install --immutable
-      - run: yarn validate
-      - run: yarn deploy
+      - run: npm ci
+      - run: npm run validate
+      - run: npm deploy
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}

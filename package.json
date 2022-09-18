@@ -27,13 +27,13 @@
   "scripts": {
     "check-types": "tsc --noEmit",
     "compile": "webpack --devtool nosources-source-map",
-    "deploy": "vsce publish --yarn",
+    "deploy": "vsce publish",
     "format": "prettier . --write --ignore-path .gitignore",
     "package": "webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
     "validate": "run-p check-types",
-    "vscode:prepublish": "yarn run package",
+    "vscode:prepublish": "npm run package",
     "watch": "webpack --watch --devtool nosources-source-map --mode development"
   },
   "contributes": {

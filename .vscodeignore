@@ -1,13 +1,12 @@
 .gitignore
 .vscode-test/**
 .vscode/**
-.yarnrc
 **/.eslintrc.json
 **/*.map
 **/*.ts
 **/tsconfig.json
 node_modules/
 out/**
+package-lock.json
 src/**
-yarn.lock
 webpack.config.js
